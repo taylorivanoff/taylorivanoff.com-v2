@@ -1,0 +1,12 @@
+name: taylorivanoff
+recipe: laravel
+config:
+  webroot: public
+services:
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+proxy:
+  pma:
+    - pma.taylorivanoff.lndo.site
