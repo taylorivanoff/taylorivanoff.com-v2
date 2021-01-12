@@ -43,7 +43,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-16">
                 <div class="space-y-4">
                     <div class="text-lg font-semibold hover:text-blue-700 transition duration-150 ease-in-out">
-                        <a href="https://bug-tracker.taylorivanoff.com/" target="_blank" class="hover:text-blue-700 transition duration-150 ease-in-out">G-code Splicer -></a>
+                        <a href="https://gcode-splicer.taylorivanoff.com/" target="_blank" class="hover:text-blue-700 transition duration-150 ease-in-out">G-code Splicer -></a>
                     </div>
                     <div class="text-sm text-gray-500">
                         A Laravel tool that splices .gcode files in order to automate a 3D printing production line.
