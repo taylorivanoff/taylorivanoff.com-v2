@@ -2,7 +2,7 @@
     <div class="max-w-4xl space-y-16 mt-6">
         <img src="/img/me.jpg" alt="">
         <div class="text-xl leading-relaxed">
-            I’m Taylor — a software engineer based in Sydney, Australia. I started out as a designer but I've evolved from creating digital content to developing enterprise cloud-based applications.
+            I’m Taylor — a software engineer based in Sydney, Australia. I develop enterprise cloud-based web applications.
         </div>
         <!--
         <div>

@@ -67,9 +67,6 @@
                 Work
             </x-responsive-nav-link>
              <x-responsive-nav-link>
-                Blog
-            </x-responsive-nav-link>
-             <x-responsive-nav-link>
                 CV
             </x-responsive-nav-link>
         </div>
