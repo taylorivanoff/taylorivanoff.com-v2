@@ -2,7 +2,7 @@
     <div class="max-w-4xl space-y-16 mt-6">
         <img src="/img/me.jpg" alt="">
         <div class="text-xl leading-relaxed">
-            I’m Taylor — a software engineer based in Sydney, Australia.<br>Currently, I'm a Senior Web Developer working on an enterprise cloud-based web application.
+            I’m Taylor — a software engineer based in Sydney, Australia.<br>Currently, I'm a Senior Web Developer working on an enterprise cloud-based web app.
         </div>
         <div>
             <div class="uppercase text-xs tracking-widest text-gray-400 font-semibold py-8" id="work">
