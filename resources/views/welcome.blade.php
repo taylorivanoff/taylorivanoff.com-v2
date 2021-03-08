@@ -5,7 +5,7 @@
             I’m Taylor — a software engineer based in Sydney, Australia.
         </div>
          <div class="text-xl leading-relaxed">
-            Currently, I'm a Senior Web Developer working on an cloud-based e-commerce solution for the hospitality industry.
+            Currently, I'm a Senior Web Developer working on a cloud-based e-commerce solution for the hospitality industry.
         </div>
         <div class="mt-6">
             <div class="uppercase text-xs tracking-widest text-gray-400 font-semibold py-8" id="work">
