@@ -3,15 +3,12 @@
     <div class="py-0 lg:py-8">
         <div class="flex lg:block justify-between h-24">
             <x-application-logo />
-                
+
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:flex font-bold">
                     <x-nav-link href="#work">
                         Work
-                    </x-nav-link>
-                    <x-nav-link href="{{ url('downloads/CV.pdf') }}" target="_blank">
-                        CV
                     </x-nav-link>
                 </div>
             </div>
@@ -65,9 +62,6 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link>
                 Work
-            </x-responsive-nav-link>
-             <x-responsive-nav-link>
-                CV
             </x-responsive-nav-link>
         </div>
 
