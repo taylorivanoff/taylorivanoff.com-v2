@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/spotify', function() {
-    $url = "spotify:artist:4RUlh6L1Nge1exTzWJ4K2z";
+    $url = "spotify://artist/4RUlh6L1Nge1exTzWJ4K2z";
 
-    return redirect($url);
+    return redirect()->away($url);
 });
 
 // Route::get('/dashboard', function () {
