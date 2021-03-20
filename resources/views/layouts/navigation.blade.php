@@ -7,8 +7,8 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:flex font-bold">
-                    <x-nav-link href="#work">
-                        Work
+                    <x-nav-link href="#projects">
+                        Projects
                     </x-nav-link>
                 </div>
             </div>
@@ -61,7 +61,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link>
-                Work
+                Projects
             </x-responsive-nav-link>
         </div>
 
