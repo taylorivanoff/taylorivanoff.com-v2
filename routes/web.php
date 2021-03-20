@@ -17,10 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/spotify', function() {
-    $url = "spotify://artist/4RUlh6L1Nge1exTzWJ4K2z";
-
-    return redirect()->away($url);
-});
-
 // require __DIR__.'/auth.php';
