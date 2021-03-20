@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/spotify', function() {
-    $url = "https://open.spotify.com/artist/4RUlh6L1Nge1exTzWJ4K2z?si=xrpYJfZ2QnqH5S_oY7LXOg";
+    $url = "spotify:artist:4RUlh6L1Nge1exTzWJ4K2z";
 
     return redirect($url);
 });
