@@ -17,8 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/spotify', function() {
+    $url = "https://open.spotify.com/artist/4RUlh6L1Nge1exTzWJ4K2z?si=xrpYJfZ2QnqH5S_oY7LXOg";
 
-require __DIR__.'/auth.php';
+    return redirect($url);
+});
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+// require __DIR__.'/auth.php';
