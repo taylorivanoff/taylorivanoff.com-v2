@@ -1,12 +1,11 @@
 <x-guest-layout>
     <div class="max-w-4xl space-y-8 mt-6">
         <img src="/img/taylor-ivanoff.jpg" alt="Taylor Ivanoff">
+
         <div class="text-xl leading-relaxed">
             I’m Taylor — a software engineer based in Sydney, Australia.
         </div>
-         <div class="text-xl leading-relaxed">
-            Currently, I'm a Senior Web Developer at <a class="underline hover:text-blue-700" href="https://www.orderup.com.au/" target="_blank">Order Up!</a>, a leading online ordering platform.
-        </div>
+
         <div class="mt-6">
             <div class="uppercase text-xs tracking-widest text-gray-400 font-semibold py-8" id="projects">
                 Projects
