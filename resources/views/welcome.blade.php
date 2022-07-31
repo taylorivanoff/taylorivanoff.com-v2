@@ -1,7 +1,5 @@
 <x-guest-layout>
     <div class="max-w-4xl space-y-8 mt-6">
-        <img src="/img/taylor-ivanoff.jpg" alt="Taylor Ivanoff">
-
         <div class="text-xl leading-relaxed">
             I’m Taylor — a software engineer based in Sydney, Australia.
         </div>
