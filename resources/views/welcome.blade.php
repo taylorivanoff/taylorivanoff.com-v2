@@ -1,7 +1,5 @@
 <x-guest-layout>
     <div class="max-w-4xl space-y-8 mt-6">
-        <img src="/img/taylor-ivanoff.jpg" alt="Taylor Ivanoff">
-
         <div class="mt-6 mb-12">
             <div class="uppercase text-xs tracking-widest text-gray-400 font-semibold py-8" id="demos">
                 Demos
