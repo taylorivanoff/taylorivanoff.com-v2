@@ -1,13 +1,15 @@
+---
 kind: pipeline
 type: docker
 name: default
 
 steps:
-  - name: install
-    image: composer
+  - name: env
+    image: drone
     commands:
-      - composer install
-
+      - echo "hello"
 trigger:
   event:
-    - push
+    exclude:
+      - promote
+      - rollback
