@@ -3,18 +3,8 @@ kind: pipeline
 type: docker
 name: default
 
-clone:
-  disable: true
-
 steps:
-  - name: greeting
-    image: alpine
+  - name: install
+    image: composer
     commands:
-      - echo hello
-      - echo world
-
-trigger:
-  event:
-    exclude:
-      - promote
-      - rollback
+      - composer install
