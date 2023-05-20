@@ -4,10 +4,12 @@ type: docker
 name: default
 
 steps:
-  - name: env
-    image: drone
+  - name: greeting
+    image: alpine
     commands:
-      - echo "hello"
+      - echo hello
+      - echo world
+
 trigger:
   event:
     exclude:
