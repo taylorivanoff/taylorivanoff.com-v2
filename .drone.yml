@@ -10,8 +10,8 @@ platform:
 steps:
   - name: prepare
     commands:
-      - docker kill "taylorivanoff-nginx" "taylorivanoff-app"
-      - docker rm "taylorivanoff-nginx" "taylorivanoff-app"
+      - docker kill "taylorivanoff-nginx" "taylorivanoff-app" || true
+      - docker rm "taylorivanoff-nginx" "taylorivanoff-app" || true
       - rm -Rf "/home/taylor/sites/taylorivanoff.com"
       - mkdir -p "/home/taylor/sites/taylorivanoff.com"
       - cp -R . "/home/taylor/sites/taylorivanoff.com"
