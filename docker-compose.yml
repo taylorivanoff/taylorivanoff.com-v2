@@ -13,6 +13,9 @@ services:
       - ./:/var/www
     networks:
       - taylorivanoff
+    environment:
+      VIRTUAL_HOST: taylorivanoff.com
+      LETSENCRYPT_HOST: taylorivanoff.com
 
   nginx:
     image: nginx:alpine
