@@ -24,7 +24,7 @@ services:
     networks:
       - nginx-reverse-proxy
     environment:
-      VIRTUAL_PORT: 443
+      VIRTUAL_PORT: 80
       VIRTUAL_HOST: taylorivanoff.com
       LETSENCRYPT_HOST: taylorivanoff.com
 
