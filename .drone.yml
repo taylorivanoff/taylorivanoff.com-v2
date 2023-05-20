@@ -10,5 +10,6 @@ platform:
 steps:
   - name: greeting
     commands:
-      - docker compose rm -f
+      - docker compose build app
+      - docker compose down
       - docker compose up -d
