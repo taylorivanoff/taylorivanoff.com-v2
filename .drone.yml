@@ -12,7 +12,7 @@ steps:
     commands:
       - docker kill "taylorivanoff-nginx" "taylorivanoff-app" || true
       - docker rm "taylorivanoff-nginx" "taylorivanoff-app" || true
-      - rm -Rf "/home/taylor/sites/{$}"
+      - rm -Rf "/home/taylor/sites/taylorivanoff.com"
       - mkdir -p "/home/taylor/sites/taylorivanoff.com"
       - cp -R . "/home/taylor/sites/taylorivanoff.com"
       - cd "/home/taylor/sites/taylorivanoff.com"
@@ -20,4 +20,5 @@ steps:
       - ls -la
       - docker compose build app
       - docker compose up -d
-      - docker compose exec app composer install
+      - docker compose exec app rm -rf vendor composer.lock
+      - docker-compose exec app composer install
