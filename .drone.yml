@@ -3,6 +3,9 @@ kind: pipeline
 type: docker
 name: default
 
+clone:
+  disable: true
+
 steps:
   - name: greeting
     image: alpine
