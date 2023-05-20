@@ -11,3 +11,4 @@ steps:
   - name: greeting
     commands:
       - pwd
+      - ls -la
