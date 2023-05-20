@@ -4,7 +4,7 @@ type: ssh
 name: default
 
 server:
-  host: localhost
+  host: 149.28.167.163
   user: taylor
   password:
     from_secret: ssh_password
