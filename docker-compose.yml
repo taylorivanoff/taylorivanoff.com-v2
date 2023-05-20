@@ -18,9 +18,6 @@ services:
     image: nginx:alpine
     container_name: taylorivanoff-nginx
     restart: unless-stopped
-    ports:
-      - 8000:80
-      - 8001:443
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
