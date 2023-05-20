@@ -16,9 +16,8 @@ steps:
       - mkdir -p "/home/taylor/sites/taylorivanoff.com"
       - cp -R . "/home/taylor/sites/taylorivanoff.com"
       - cd "/home/taylor/sites/taylorivanoff.com"
-      - rm -rf vendor composer.lock
+      - composer install
       - pwd
       - ls -la
       - docker compose build app
       - docker compose up -d
-      - docker compose exec app composer install
