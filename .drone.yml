@@ -12,4 +12,6 @@ server:
 steps:
   - name: deploy
     commands:
+      - cp -R . "/home/taylor/sites/${DRONE_REPO_NAME}"
+      - cd "/home/taylor/sites/${DRONE_REPO_NAME}"
       - docker compose up -d --force-recreate --remove-orphans
