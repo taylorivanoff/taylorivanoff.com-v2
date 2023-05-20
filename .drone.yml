@@ -10,5 +10,4 @@ platform:
 steps:
   - name: greeting
     commands:
-      - docker compose down
-      - docker compose up -d
+      - pwd
