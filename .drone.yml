@@ -8,13 +8,15 @@ platform:
   arch: amd64
 
 steps:
-  - name: prepare
+  - name: deploy
     commands:
       - docker kill "taylorivanoff-nginx" "taylorivanoff-app" || true
       - docker rm "taylorivanoff-nginx" "taylorivanoff-app" || true
-      - rm -Rf "/home/taylor/sites/taylorivanoff.com"
+      - rm -Rf "/home/taylor/sites/{$}"
       - mkdir -p "/home/taylor/sites/taylorivanoff.com"
       - cp -R . "/home/taylor/sites/taylorivanoff.com"
       - cd "/home/taylor/sites/taylorivanoff.com"
       - pwd
       - ls -la
+      - docker compose up -d
+      - docker compose exec app composer install
