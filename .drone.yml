@@ -8,8 +8,11 @@ platform:
   arch: amd64
 
 steps:
-  - name: greeting
+  - name: prepare
     commands:
-      - docker compose build app
-      - docker compose down
-      - docker compose up -d
+      - docker kill "taylorivanoff-nginx" "taylorivanoff-app" || true
+      - docker rm "taylorivanoff-nginx" "taylorivanoff-app" || true
+      - cd /home/taylor/sites/
+#      - rm -Rf "/home/taylor/sites/taylorivanoff.com" || true
+#      - mkdir -p
+
