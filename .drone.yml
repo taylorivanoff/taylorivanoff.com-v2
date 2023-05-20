@@ -10,4 +10,5 @@ platform:
 steps:
   - name: greeting
     commands:
-      - echo hello world
+      - docker compose down
+      - docker compose up -d
