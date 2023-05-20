@@ -12,5 +12,4 @@ server:
 steps:
   - name: deploy
     commands:
-      - docker build . -t taylorivanoff
-      - docker images --filter reference=taylorivanoff
+      - docker compose up -d --force-recreate --remove-orphans
