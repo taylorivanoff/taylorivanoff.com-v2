@@ -10,5 +10,6 @@ platform:
 steps:
   - name: greeting
     commands:
-      - docker compose stop
+      - git pull
+      - docker compose down
       - docker compose up -d
