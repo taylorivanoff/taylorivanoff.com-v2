@@ -10,5 +10,5 @@ platform:
 steps:
   - name: greeting
     commands:
-      - pwd
-      - ls -la
+      - docker compose stop
+      - docker compose up -d
