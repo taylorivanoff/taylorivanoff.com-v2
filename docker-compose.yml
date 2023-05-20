@@ -12,11 +12,7 @@ services:
     volumes:
       - ./:/var/www
     networks:
-      - taylorivanoff
-    environment:
-      VIRTUAL_HOST: taylorivanoff.com
-      LETSENCRYPT_HOST: taylorivanoff.com
-      VIRTUAL_PORT: 80
+      - net
 
   nginx:
     image: nginx:alpine
@@ -28,8 +24,12 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - taylorivanoff
+      - net
+    environment:
+      VIRTUAL_PORT: 80
+      VIRTUAL_HOST: taylorivanoff.com
+      LETSENCRYPT_HOST: taylorivanoff.com
 
 networks:
-  taylorivanoff:
-    driver: bridge
+  net:
+    external: true
