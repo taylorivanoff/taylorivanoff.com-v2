@@ -18,5 +18,6 @@ steps:
       - cd "/home/taylor/sites/taylorivanoff.com"
       - pwd
       - ls -la
+      - docker compose build app
       - docker compose up -d
       - docker compose exec app composer install
