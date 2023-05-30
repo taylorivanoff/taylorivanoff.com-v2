@@ -18,7 +18,7 @@ services:
     container_name: taylorivanoff-nginx
     restart: unless-stopped
     ports:
-      - 4002:80
+      - 4002:82
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
