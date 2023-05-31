@@ -5,3 +5,4 @@ pipeline:
       - ls -l
       - cd deploy
       - /bin/sh build.sh
+
