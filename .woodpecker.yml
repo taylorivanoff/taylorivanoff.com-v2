@@ -5,5 +5,3 @@ pipeline:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - /bin/sh deploy/build.sh
-      - composer install
-      - cp .env.example .env
