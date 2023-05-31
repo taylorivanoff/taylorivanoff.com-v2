@@ -1,9 +1,11 @@
+clone:
+  git:
+    image: plugins/git
+    depth: 1
 pipeline:
   build:
     image: docker:20.10.16 # fix at least major here
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - ls -l
-      - cd deploy
-      - /bin/sh build.sh
+      - cd deploy && /bin/sh build.sh
