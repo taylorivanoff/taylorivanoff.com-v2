@@ -6,5 +6,6 @@
 
 pwd
 ls -la
+docker ps -a
 docker build .
 docker compose up -d
