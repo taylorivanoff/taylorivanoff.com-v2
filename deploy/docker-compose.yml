@@ -23,7 +23,7 @@ services:
       - ./deploy/nginx:/etc/nginx/conf.d/
     networks:
       - taylorivanoff_default
-      - backend
+      - proxy-network
 
 networks:
   taylorivanoff_default:
