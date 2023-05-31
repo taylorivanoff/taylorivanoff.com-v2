@@ -4,4 +4,4 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - cd deploy && /bin/sh build.sh
+      - /bin/sh deploy/build.sh
