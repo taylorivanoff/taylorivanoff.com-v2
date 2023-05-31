@@ -4,6 +4,4 @@
 docker builder prune -f
 docker container prune -f
 
-docker compose ps
-docker compose stop
-docker compose -f ../docker-compose.yml up -d --build --remove-orphans
+docker compose -f ../docker-compose.yml up -d --force-recreate --build
