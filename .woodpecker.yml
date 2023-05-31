@@ -4,7 +4,7 @@ clone:
     depth: 1
 pipeline:
   build:
-    image: docker:20.10.16 # fix at least major here
+    image: docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
