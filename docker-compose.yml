@@ -8,7 +8,7 @@ services:
     image: taylorivanoff
     container_name: taylorivanoff-app
     restart: unless-stopped
-    working_dir: /var/www/
+    working_dir: /var/www/deploy
     volumes:
       - ./:/var/www
     networks:

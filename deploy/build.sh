@@ -12,5 +12,7 @@ docker compose rm -f
 
 docker compose up -d --build --force-recreate
 
-docker compose exec app composer install
+pwd
+cd deploy || return
+composer install
 #      - cp .env.example .env
