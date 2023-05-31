@@ -1,5 +1,8 @@
 #!/bin/bash
 
-docker builder prune -f # don't add -a here, it will destroy build cache
+# Clear caches
+docker builder prune -f
 docker container prune -f
-docker compose -f docker-compose.yml up -d --build --remove-orphans
+
+# Run container
+docker compose -f ../docker-compose.yml up -d --build --remove-orphans
