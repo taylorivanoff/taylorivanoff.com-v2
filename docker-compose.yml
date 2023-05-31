@@ -12,7 +12,7 @@ services:
     volumes:
       - ./:/var/www
     networks:
-      - taylorivanoff
+      - default
 
   nginx:
     image: nginx:alpine
@@ -22,10 +22,10 @@ services:
       - ./:/var/www
       - ./deploy/nginx:/etc/nginx/conf.d/
     networks:
-      - taylorivanoff
+      - default
       - proxy-network
 
 networks:
-  taylorivanoff:
+  default:
   proxy-network:
     external: true
