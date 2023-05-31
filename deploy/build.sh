@@ -6,4 +6,6 @@
 
 pwd
 ls -la
-docker ps -a
+docker compose down
+docker compose rm -f
+docker compose up -d --build --force-recreate
