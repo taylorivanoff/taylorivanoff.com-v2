@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: docker
+    image: taylorivanoff
     commands:
       - ls -l
       - cd deploy
