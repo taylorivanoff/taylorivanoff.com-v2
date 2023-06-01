@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: taylorivanoff:latest
+    image: taylorivanoff
     container_name: taylorivanoff-app
     restart: unless-stopped
     working_dir: /var/www/
