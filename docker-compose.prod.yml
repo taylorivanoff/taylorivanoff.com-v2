@@ -1,23 +1,10 @@
-version: "3.7"
-
 services:
   app:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        user: sammy
-        uid: 1000
-    image: taylorivanoff
-    container_name: taylorivanoff-app
-    working_dir: /var/www/
     restart: always
     networks:
       - default
 
   nginx:
-    image: nginx:alpine
-    container_name: taylorivanoff-nginx
     restart: always
     networks:
       - default
