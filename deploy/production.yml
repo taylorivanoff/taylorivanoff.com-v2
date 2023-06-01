@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  app:
+    image: taylorivanoff:latest
+    container_name: taylorivanoff-app
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    networks:
+      - default
+
+  nginx:
+    image: nginx:alpine
+    container_name: taylorivanoff-nginx
+    restart: always
+    volumes:
+      - ./deploy/nginx:/etc/nginx/conf.d/
+    networks:
+      - default
+      - proxy-network
+
+networks:
+  default:
+  proxy-network:
+    external: true
