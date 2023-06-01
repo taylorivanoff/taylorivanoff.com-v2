@@ -2,12 +2,16 @@ version: "3.7"
 
 services:
   app:
-    image: taylorivanoff:latest
-    container_name: taylorivanoff-app
-    restart: always
     build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        user: sammy
+        uid: 1000
+    image: taylorivanoff
+    container_name: taylorivanoff-app
+    working_dir: /var/www/
+    restart: always
     networks:
       - default
 

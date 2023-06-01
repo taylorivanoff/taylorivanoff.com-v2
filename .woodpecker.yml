@@ -4,5 +4,5 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker compose build
-      - docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --no-deps
+      - docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --no-deps --build
+      - docker compose exec app ls -la

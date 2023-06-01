@@ -5,6 +5,9 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        user: sammy
+        uid: 1000
     image: taylorivanoff
     container_name: taylorivanoff-app
     restart: unless-stopped
