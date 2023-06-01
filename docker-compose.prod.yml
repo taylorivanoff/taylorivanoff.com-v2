@@ -1,10 +1,18 @@
 services:
   app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: taylorivanoff
+    container_name: taylorivanoff-app
+    working_dir: /var/www/
     restart: always
     networks:
       - default
 
   nginx:
+    image: nginx:alpine
+    container_name: taylorivanoff-nginx
     restart: always
     networks:
       - default
