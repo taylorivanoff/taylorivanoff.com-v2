@@ -34,3 +34,4 @@ networks:
   default:
   proxy-network:
     external: true
+
