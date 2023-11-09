@@ -12,7 +12,7 @@ pipeline:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - docker compose down
-      - docker compose up -d --remove-orphans -
+      - docker compose up -d --remove-orphans
 
   install:
     image: docker
