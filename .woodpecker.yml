@@ -1,8 +1,12 @@
 pipeline:
   build:
-    image: debian
+    image: ubuntu
     commands:
+      - apt-get update
+      - apt-get install -y rsync
+      - which rsync
       - rsync -avz --delete-after --exclude-from=.deployignore . /home/sites/${CI_REPO_NAME}
+
 #    image: docker
 #    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock
