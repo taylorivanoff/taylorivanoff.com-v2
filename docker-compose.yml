@@ -1,37 +1,27 @@
-version: '3'
+version: '3.8'
 
 services:
-  app:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        user: taylor
-        uid: 1000
-    image: taylorivanoff
-    container_name: taylorivanoff-app
-    restart: always
-    working_dir: /var/www/
+  php-fpm:
+    image: php:8.2-fpm
+    container_name: php-fpm
     volumes:
-      - ./:/var/www
+      - ./:/var/www/html
     networks:
-      - default
+      - app-network
 
   nginx:
-    image: nginx:alpine
-    container_name: taylorivanoff-nginx
-    restart: always
-    volumes:
-      - ./:/var/www
-      - ./deploy/nginx/:/etc/nginx/conf.d/
+    image: nginx:latest
+    container_name: nginx
     ports:
-      - "8080:80"  # Map host port 8080 to container port 80
+      - "80:80"
+    volumes:
+      - ./deploy/nginx:/etc/nginx/conf.d
+      - ./:/var/www/html
     networks:
-      - default
-#      - proxy-network
+      - app-network
+    depends_on:
+      - php-fpm
 
 networks:
-  default:
-#  proxy-network:
-#    external: true
-
+  app-network:
+    driver: bridge
