@@ -29,10 +29,12 @@ RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
+USER $user
+
 # Set working directory
 WORKDIR /var/www
 
-USER $user
+RUN ls -al
 
 # Install dependencies
 RUN composer install
