@@ -37,4 +37,7 @@ COPY . /var/www
 # Install Composer dependencies
 RUN composer install --optimize-autoloader --no-interaction
 
+# Copy env
+RUN cp .env.example .env
+
 USER $user
