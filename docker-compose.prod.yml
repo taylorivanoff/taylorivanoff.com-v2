@@ -9,9 +9,9 @@ services:
     image: taylorivanoff
     container_name: taylorivanoff-app
     restart: always
-    working_dir: /var/www/
+    working_dir: /home/sammy
     volumes:
-      - ./:/var/www
+      - ./:/home/sammy
     networks:
       - default
 
@@ -20,7 +20,7 @@ services:
     container_name: taylorivanoff-nginx
     restart: always
     volumes:
-      - ./:/var/www
+      - ./:/home/sammy
       - ./deploy/nginx:/etc/nginx/conf.d/
     networks:
       - default
