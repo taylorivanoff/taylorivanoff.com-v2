@@ -1,27 +1,49 @@
-version: '3.8'
-
+version: "3.7"
 services:
-  php-fpm:
-    image: php:8.2-fpm
-    container_name: php-fpm
+  app:
+    build:
+      args:
+        user: taylor
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: taylorivanoff
+    container_name: taylorivanoff-app
+    restart: unless-stopped
+    working_dir: /var/www/
     volumes:
-      - ./:/var/www/html
+      - ./:/var/www
     networks:
-      - app-network
+      - taylorivanoff
+
+  db:
+    image: mysql:8.0
+    container_name: taylorivanoff-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+#    volumes:
+#      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - taylorivanoff
 
   nginx:
-    image: nginx:latest
-    container_name: nginx
+    image: nginx:alpine
+    container_name: taylorivanoff-nginx
+    restart: unless-stopped
     ports:
-      - "80:80"
+      - "8000:80"
     volumes:
-      - ./deploy/nginx:/etc/nginx/conf.d
-      - ./:/var/www/html
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - app-network
-    depends_on:
-      - php-fpm
+      - taylorivanoff
 
 networks:
-  app-network:
+  taylorivanoff:
     driver: bridge
