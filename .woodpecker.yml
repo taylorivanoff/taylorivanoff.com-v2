@@ -1,9 +1,13 @@
-pipeline:
-  build:
-    image: docker
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    commands:
-      - docker compose -f docker-compose.prod.yml build
-      - docker compose -f docker-compose.prod.yml up --no-deps -d
-      -
+# Define the language and version for your project
+language: php
+version: 8
+
+# Specify the steps for your build and deployment
+build:
+  script:
+    - composer install
+    - php artisan migrate --seed
+
+deploy:
+  script:
+    - rsync -avz --delete-after --exclude-from=.deployignore . /sites/${CI_REPO_NAME}
