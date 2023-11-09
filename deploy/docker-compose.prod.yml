@@ -12,8 +12,6 @@ services:
     container_name: taylorivanoff-app
     restart: always
     working_dir: /var/www/
-    ports:
-      - "8080:80"  # Map host port 8080 to container port 80
     volumes:
       - ./:/var/www
     networks:
@@ -27,8 +25,7 @@ services:
       - ./:/var/www
       - ./deploy/nginx:/etc/nginx/conf.d/
     ports:
-      - "80:80"    # Map host port 80 to container port 80
-      - "443:443"  # Map host port 443 to container port 443
+      - "8080:80"  # Map host port 8080 to container port 80
     networks:
       - default
       - proxy-network
