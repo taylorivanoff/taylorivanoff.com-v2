@@ -1,8 +1,8 @@
 pipeline:
   build:
-  image: debian
-  commands:
-    - rsync -avz --delete-after --exclude-from=.deployignore . /home/sites/${CI_REPO_NAME}
+    image: debian
+    commands:
+      - rsync -avz --delete-after --exclude-from=.deployignore . /home/sites/${CI_REPO_NAME}
 #    image: docker
 #    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock
