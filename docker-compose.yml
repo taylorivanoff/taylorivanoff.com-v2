@@ -1,22 +1,37 @@
+version: '3'
+
 services:
   app:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
       args:
-        user: sammy
+        user: taylor
         uid: 1000
     image: taylorivanoff
     container_name: taylorivanoff-app
-    restart: unless-stopped
+    restart: always
     working_dir: /var/www/
     volumes:
       - ./:/var/www
+    networks:
+      - default
 
   nginx:
     image: nginx:alpine
     container_name: taylorivanoff-nginx
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./:/var/www
-      - ./deploy/nginx:/etc/nginx/conf.d/
+      - ./deploy/nginx/:/etc/nginx/conf.d/
+    ports:
+      - "8080:80"  # Map host port 8080 to container port 80
+    networks:
+      - default
+#      - proxy-network
+
+networks:
+  default:
+#  proxy-network:
+#    external: true
+

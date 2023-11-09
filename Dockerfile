@@ -33,3 +33,6 @@ RUN mkdir -p /home/$user/.composer && \
 WORKDIR /var/www
 
 USER $user
+
+# Install dependencies
+RUN composer install
