@@ -10,4 +10,5 @@ build:
 
 deploy:
   script:
-    - rsync -avz --delete-after --exclude-from=.deployignore . /sites/${CI_REPO_NAME}
+    - rsync -avz --delete-after --exclude-from=.deployignore . /home/sites/${CI_REPO_NAME}
+
