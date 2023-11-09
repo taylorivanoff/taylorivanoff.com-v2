@@ -6,6 +6,3 @@ pipeline:
     commands:
       - docker compose build app
       - docker compose up -d --remove-orphans
-      - docker compose exec app ls -l
-      - docker compose exec app rm -rf vendor composer.lock
-      - docker compose exec app composer install

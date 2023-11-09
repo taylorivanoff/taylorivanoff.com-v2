@@ -34,4 +34,7 @@ WORKDIR /var/www
 # Copy the application code
 COPY . /var/www
 
+# Install Composer dependencies
+RUN composer install --optimize-autoloader --no-interaction
+
 USER $user
