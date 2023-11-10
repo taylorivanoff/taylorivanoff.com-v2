@@ -4,5 +4,5 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker build -t taylorivanoff .
+      - docker compose build
       - docker compose up -d --remove-orphans
