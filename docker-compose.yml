@@ -1,21 +1,13 @@
-version: "3.7"
+version: '3'
 services:
-
   app:
     build:
       context: ./
-      dockerfile: Dockerfile
-    image: taylorivanoff
-    container_name: taylorivanoff-app
-    restart: unless-stopped
-    working_dir: /var/www/html
-
-  nginx:
-    image: nginx:alpine
-    container_name: taylorivanoff-nginx
-    restart: unless-stopped
-    ports:
-      - "8081:80"
     volumes:
-      - ./:/var/www/html
-      - ./docker-compose/nginx:/etc/nginx/conf.d/
+      - .:/var/www/html
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
