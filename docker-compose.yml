@@ -1,10 +1,8 @@
 version: "3.7"
 services:
+
   app:
     build:
-      args:
-        user: taylor
-        uid: 1000
       context: ./
       dockerfile: Dockerfile
     image: taylorivanoff
@@ -18,6 +16,8 @@ services:
     image: nginx:alpine
     container_name: taylorivanoff-nginx
     restart: unless-stopped
+    ports:
+      - "8082:80"
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
