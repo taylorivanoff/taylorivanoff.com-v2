@@ -7,24 +7,17 @@ services:
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: taylorivanoff:latest
+    image: taylorivanoff
     container_name: taylorivanoff-app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www
 
-  db:
-    image: mysql:8.0
-    container_name: taylorivanoff-db
-    restart: unless-stopped
-
   nginx:
     image: nginx:alpine
     container_name: taylorivanoff-nginx
     restart: unless-stopped
-    ports:
-      - "8080:80"
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
